@@ -9,13 +9,14 @@ import defaultLogo from './assets/Logo.png';
 
 const legalDisclaimer = `Aviso legal: Este mensaje y sus archivos adjuntos están dirigidos exclusivamente a su destinatario y pueden contener información confidencial. Si usted no es el destinatario indicado, queda notificado de que la utilización, divulgación y/o copia sin autorización está prohibida en virtud de la legislación vigente. Si ha recibido este correo por error, por favor notifíquelo inmediatamente al remitente y elimine el mensaje de su sistema.`;
 
-const SignatureTemplate1 = ({ name, jobTitle, companyName, companyAddress, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
+const SignatureTemplate1 = ({ name, jobTitle, companyName, companyAddress, postalCode, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
   <div className="signature-preview template1">
     {companyLogo && <img src={companyLogo} alt="Company Logo" />}
     <h2>{name}</h2>
     <p className="job-title">{jobTitle}</p>
     {companyName && <p><strong>{companyName}</strong></p>}
     {companyAddress && <p>{companyAddress}</p>}
+    {postalCode && <p>CP: {postalCode}</p>}
     {phoneNumber && <p><FaPhone style={{marginRight: '8px'}} />{phoneNumber}</p>}
     <p>
       {email && <a href={`mailto:${email}`}><FaEnvelope style={{marginRight: '8px'}} />{email}</a>}
@@ -33,7 +34,7 @@ const SignatureTemplate1 = ({ name, jobTitle, companyName, companyAddress, phone
   </div>
 );
 
-const SignatureTemplate2 = ({ name, jobTitle, companyName, companyAddress, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
+const SignatureTemplate2 = ({ name, jobTitle, companyName, companyAddress, postalCode, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
   <div className="signature-preview template2">
     <div className="logo-container">
       {companyLogo && <img src={companyLogo} alt="Company Logo" />}
@@ -43,10 +44,11 @@ const SignatureTemplate2 = ({ name, jobTitle, companyName, companyAddress, phone
       <p>{jobTitle}</p>
       {companyName && <p><strong>{companyName}</strong></p>}
       <div className="contact-info">
+        {companyAddress && <p><FaMapMarkerAlt />{companyAddress}</p>}
+        {postalCode && <p><FaMapMarkerAlt />CP: {postalCode}</p>}
         {phoneNumber && <p><FaPhone />{phoneNumber}</p>}
         {email && <p><FaEnvelope />{email}</p>}
         {website && <p><FaGlobe />{website}</p>}
-        {companyAddress && <p><FaMapMarkerAlt />{companyAddress}</p>}
         {linkedin && <p><FaLinkedin /><a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></p>}
         {twitter && <p><FaTwitter /><a href={twitter} target="_blank" rel="noopener noreferrer">Twitter</a></p>}
         {instagram && <p><FaInstagram /><a href={instagram} target="_blank" rel="noopener noreferrer">Instagram</a></p>}
@@ -59,17 +61,18 @@ const SignatureTemplate2 = ({ name, jobTitle, companyName, companyAddress, phone
   </div>
 );
 
-const SignatureTemplate3 = ({ name, jobTitle, companyName, companyAddress, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
+const SignatureTemplate3 = ({ name, jobTitle, companyName, companyAddress, postalCode, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
   <div className="signature-preview template3">
     {companyLogo && <img src={companyLogo} alt="Company Logo" />}
     <h2>{name}</h2>
     <p className="job-title">{jobTitle}</p>
     {companyName && <p><strong>{companyName}</strong></p>}
     <div>
+      {companyAddress && <p><FaMapMarkerAlt style={{marginRight: '8px'}} />{companyAddress}</p>}
+      {postalCode && <p><FaMapMarkerAlt style={{marginRight: '8px'}} />CP: {postalCode}</p>}
       {phoneNumber && <p><FaPhone style={{marginRight: '8px'}} />{phoneNumber}</p>}
       {email && <p><a href={`mailto:${email}`}><FaEnvelope style={{marginRight: '8px'}} />{email}</a></p>}
       {website && <p><a href={website} target="_blank" rel="noopener noreferrer"><FaGlobe style={{marginRight: '8px'}} />{website}</a></p>}
-      {companyAddress && <p><FaMapMarkerAlt style={{marginRight: '8px'}} />{companyAddress}</p>}
     </div>
     <div className="social-icons">
       {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>}
@@ -83,7 +86,7 @@ const SignatureTemplate3 = ({ name, jobTitle, companyName, companyAddress, phone
   </div>
 );
 
-const SignatureTemplate4 = ({ name, jobTitle, companyName, companyAddress, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
+const SignatureTemplate4 = ({ name, jobTitle, companyName, companyAddress, postalCode, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
   <div className="signature-preview template4">
     <div className="logo-frame">
       {companyLogo && <img src={companyLogo} alt="Company Logo" />}
@@ -92,11 +95,12 @@ const SignatureTemplate4 = ({ name, jobTitle, companyName, companyAddress, phone
     <p className="job-title">{jobTitle}</p>
     {companyName && <p><strong>{companyName}</strong></p>}
     <div className="contact-container">
+      {companyAddress && <span className="contact-item"><FaMapMarkerAlt />{companyAddress}</span>}
+      {postalCode && <span className="contact-item"><FaMapMarkerAlt />CP: {postalCode}</span>}
       {phoneNumber && <span className="contact-item"><FaPhone />{phoneNumber}</span>}
       {email && <span className="contact-item"><FaEnvelope /><a href={`mailto:${email}`}>{email}</a></span>}
       {website && <span className="contact-item"><FaGlobe /><a href={website} target="_blank" rel="noopener noreferrer">{website}</a></span>}
     </div>
-    {companyAddress && <p className="contact-item"><FaMapMarkerAlt />{companyAddress}</p>}
     <div className="social-icons">
       {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>}
       {twitter && <a href={twitter} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>}
@@ -109,7 +113,7 @@ const SignatureTemplate4 = ({ name, jobTitle, companyName, companyAddress, phone
   </div>
 );
 
-const SignatureTemplate5 = ({ name, jobTitle, companyName, companyAddress, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
+const SignatureTemplate5 = ({ name, jobTitle, companyName, companyAddress, postalCode, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
   <div className="signature-preview template5">
     <div className="header-container">
       {companyLogo && <img src={companyLogo} alt="Company Logo" />}
@@ -121,10 +125,11 @@ const SignatureTemplate5 = ({ name, jobTitle, companyName, companyAddress, phone
     </div>
     <div className="content-container">
       <div className="contact-info">
+        {companyAddress && <span className="contact-item"><FaMapMarkerAlt />{companyAddress}</span>}
+        {postalCode && <span className="contact-item"><FaMapMarkerAlt />CP: {postalCode}</span>}
         {phoneNumber && <span className="contact-item"><FaPhone />{phoneNumber}</span>}
         {email && <span className="contact-item"><FaEnvelope /><a href={`mailto:${email}`}>{email}</a></span>}
         {website && <span className="contact-item"><FaGlobe /><a href={website} target="_blank" rel="noopener noreferrer">{website}</a></span>}
-        {companyAddress && <span className="contact-item"><FaMapMarkerAlt />{companyAddress}</span>}
       </div>
       <div className="social-icons">
         {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>}
@@ -137,7 +142,7 @@ const SignatureTemplate5 = ({ name, jobTitle, companyName, companyAddress, phone
   </div>
 );
 
-const SignatureTemplate6 = ({ name, jobTitle, companyName, companyAddress, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
+const SignatureTemplate6 = ({ name, jobTitle, companyName, companyAddress, postalCode, phoneNumber, email, website, linkedin, twitter, instagram, facebook, companyLogo }) => (
   <div className="signature-preview template6">
     <div className="main-content">
       <div className="info-section">
@@ -145,10 +150,11 @@ const SignatureTemplate6 = ({ name, jobTitle, companyName, companyAddress, phone
         <p className="job-title">{jobTitle}</p>
         {companyName && <p className="company-name"><strong>{companyName}</strong></p>}
         <div className="contact-details">
+          {companyAddress && <p><FaMapMarkerAlt />{companyAddress}</p>}
+          {postalCode && <p><FaMapMarkerAlt />CP: {postalCode}</p>}
           {phoneNumber && <p><FaPhone />{phoneNumber}</p>}
           {email && <p><FaEnvelope /><a href={`mailto:${email}`}>{email}</a></p>}
           {website && <p><FaGlobe /><a href={website} target="_blank" rel="noopener noreferrer">{website}</a></p>}
-          {companyAddress && <p><FaMapMarkerAlt />{companyAddress}</p>}
         </div>
       </div>
       {companyLogo && <div className="logo-section">
@@ -177,6 +183,7 @@ function App() {
   const [companyLogo, setCompanyLogo] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [companyAddress, setCompanyAddress] = useState('');
+  const [postalCode, setPostalCode] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [selectedTemplate, setSelectedTemplate] = useState('template1');
   const signatureRef = useRef(null);
@@ -202,7 +209,8 @@ function App() {
       })
       .catch(error => console.error('Error al cargar el logo:', error));
     setCompanyName('Siente La Red');
-    setCompanyAddress('C/ Ramon y cajal 9 Bis 1B 9bis 1ºB Villajoyosa - Alicante');
+    setCompanyAddress('C/ Ramon y cajal 9 Bis 1B 1ºB Villajoyosa - Alicante');
+    setPostalCode('03570');
     setPhoneNumber('690121523');
   };
 
@@ -257,6 +265,7 @@ function App() {
         </div>
         ${companyName ? `<div style="margin-bottom: 10px;"><strong>${companyName}</strong></div>` : ''}
         ${companyAddress ? `<div style="margin-bottom: 10px;">${companyAddress}</div>` : ''}
+        ${postalCode ? `<div style="margin-bottom: 5px;"><FaMapMarkerAlt style="margin-right: 5px;" />CP: ${postalCode}</div>` : ''}
         ${phoneNumber ? `<div style="margin-bottom: 5px;"><FaPhone style="margin-right: 5px;" />${phoneNumber}</div>` : ''}
         ${email ? `<div style="margin-bottom: 5px;"><a href="mailto:${email}" style="color: #007bff; text-decoration: none;"><FaEnvelope style="margin-right: 5px;" />${email}</a></div>` : ''}
         ${website ? `<div style="margin-bottom: 10px;"><a href="${website}" style="color: #007bff; text-decoration: none;"><FaGlobe style="margin-right: 5px;" />${website}</a></div>` : ''}
@@ -281,6 +290,7 @@ function App() {
       jobTitle,
       companyName,
       companyAddress,
+      postalCode,
       phoneNumber,
       email,
       website,
@@ -532,6 +542,7 @@ function App() {
     setCompanyLogo('');
     setCompanyName('');
     setCompanyAddress('');
+    setPostalCode('');
     setPhoneNumber('');
   };
 
@@ -621,6 +632,11 @@ function App() {
         <div className="input-group">
           <label><FaMapMarkerAlt /> Dirección de la Empresa:</label>
           <textarea value={companyAddress} onChange={(e) => setCompanyAddress(e.target.value)} />
+        </div>
+        
+        <div className="input-group">
+          <label><FaMapMarkerAlt /> Código Postal:</label>
+          <input type="text" value={postalCode} onChange={(e) => setPostalCode(e.target.value)} />
         </div>
         
         <div className="input-group">
