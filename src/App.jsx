@@ -209,7 +209,7 @@ function App() {
       })
       .catch(error => console.error('Error al cargar el logo:', error));
     setCompanyName('Siente La Red');
-    setCompanyAddress('C/ Ramon y cajal 9 Bis 1B 1ºB Villajoyosa - Alicante');
+    setCompanyAddress('C/ Ramon y Cajal 9 Bis 1B Villajoyosa - Alicante');
     setPostalCode('03570');
     setPhoneNumber('690121523');
   };
